@@ -10,6 +10,11 @@ cd C:\Users\username\Documents\Arduino\libraries
 git clone https://github.com/jeroendoggen/Arduino-parallax-rfid/tree/master/ParallaxRFID
 ```
 
+fix files
+```
+TODO
+```
+
 ## Setup Arduino
 
 Writing Arduino Board
