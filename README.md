@@ -10,7 +10,7 @@ cd C:\Users\username\Documents\Arduino\libraries
 git clone https://github.com/jeroendoggen/Arduino-parallax-rfid/tree/master/ParallaxRFID
 ```
 
-Fix files
+Fix Files
 ```
 Todo
 ```
