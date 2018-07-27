@@ -1,7 +1,7 @@
 #include <SoftwareSerial.h>
 #include <ParallaxRFID.h>
 
-ParallaxRFID RFIDclient(9,8);
+ParallaxRFID RFIDclient(9, 8);
 
 const int ENTERING_READY_LAMP = 10;
 const int EXIT_READY_LAMP = 11;
