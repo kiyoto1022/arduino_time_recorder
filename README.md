@@ -2,7 +2,7 @@
 arduino_time_recorder
 
 
-## Install
+## Install Library
 
 Download ParallaxRFID Library
 ```
@@ -16,6 +16,15 @@ Todo
 ```
 
 ## Setup Arduino
+Clone
+```
+git clone https://github.com/kiyoto1022/arduino_time_recorder.git
+```
+
+Open Arduino File
+```
+ArduinoIDE > File > Open > arduino_time_recorder.ino
+```
 
 Writing Arduino Board
 ```
