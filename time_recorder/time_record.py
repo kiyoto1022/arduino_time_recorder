@@ -2,15 +2,17 @@
 import os
 import time
 import serial
+import cv2
 from PIL import Image
-from models.users import *
-from models.message import *
+import numpy as np
+from models.users import Users
+from models.message import Message
 
 WAIT_FOR_ACTIVATION = 3
 WAIT_FOR_SAVING_COMPLETION = 1
 
 cap = cv2.VideoCapture(0)
-cascadePath = "./time_recorder/haarcascade_frontalface_alt.xml"
+cascadePath = "./haarcascade_frontalface_alt.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath)
 
 users = Users()
@@ -21,8 +23,9 @@ def get_face_list_and_label(path):
     labels = []
     for image in os.listdir(path):
         face = detect_face(os.path.join(path, image))
-        face_list.append(face)
-        labels.append(int(os.path.splitext(image)[0]))
+        if face is not None:
+            face_list.append(face)
+            labels.append(int(os.path.splitext(image)[0]))
 
     return face_list, labels
 
@@ -36,7 +39,7 @@ def detect_face(path):
 
     # Face undetected
     print "Face undetected"
-    return ""
+    return None
 
 
 def shot():
@@ -53,30 +56,30 @@ def punch_out(user):
         return
 
     face = detect_face(shot())
-    if face == "":
+    if face is None:
         print "Face could not be detected."
         return
 
     # log only
     user.identification(face)
 
-    user.punch_out
+    user.punch_out()
     print "{} is punch out : {}.".format(user.name, user.in_time)
     print "working time {} second.".format(user.working_time_sec())
 
 
 def punch_in(user):
-    if user.is_punch_in:
+    if user.is_punch_in():
         print "{} is already punch in.".format(user.id)
         return
 
-    user.punch_in
+    user.punch_in()
     print "{} is punch in : {}.".format(user.id, user.in_time)
 
 
 def training():
     for user in users.list():
-        images, labels = get_face_list_and_label("./time_recorder/data/users_face/{}".format(user.name))
+        images, labels = get_face_list_and_label("./data/users_face/{}".format(user.name))
         user.learn(images, labels)
 
 
