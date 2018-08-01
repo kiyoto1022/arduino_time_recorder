@@ -36,7 +36,7 @@ ArduinoIDE > Sketch > Upload
 
 ![rfid_reader](https://user-images.githubusercontent.com/16317266/43329883-9d00e5fe-91fc-11e8-8efe-61dcde600e63.png)
 
-## Python Setup
+## Python Setup (2.7)
 
 ### Install Package
 ```
@@ -45,4 +45,9 @@ $ easy_install pillow
 $ pip install numpy
 $ pip install opencv-python
 $ pip install opencv-contrib-python
+```
+
+### Execute
+```
+python time_record.py
 ```
