@@ -3,33 +3,23 @@ arduino_time_recorder
 
 ## Setup Arduino
 
+### Setup Bread Board
+
+![rfid_reader](https://user-images.githubusercontent.com/16317266/43329883-9d00e5fe-91fc-11e8-8efe-61dcde600e63.png)
+
 ### Install Library
 
 Download ParallaxRFID Library
 ```
-cd C:\Users\username\Documents\Arduino\libraries
-git clone https://github.com/jeroendoggen/Arduino-parallax-rfid/tree/master/ParallaxRFID
+> git clone https://github.com/kiyoto1022/Arduino-parallax-rfid
+> cd Arduino-parallax-rfid
+> xcopy /e ParallaxRFID \Users\kiyoto1022\Documents\Arduino\libraries\ParallaxRFID
 ```
 
-Fix Files
-```
-Todo
-```
-
-Setup RFID Tag
-```
-Todo
-```
-
-### Write Sketch File
-Clone
-```
-git clone https://github.com/kiyoto1022/arduino_time_recorder.git
-```
-
+### Setup RFID Tag
 Open Sketch File
 ```
-ArduinoIDE > File > Open > arduino_time_recorder.ino
+ArduinoIDE > File > Open > ParallaxRFID\examples\ParallaxRFIDWrite\ParallaxRFIDWrite.ino
 ```
 
 Writing Arduino Board
@@ -37,9 +27,23 @@ Writing Arduino Board
 ArduinoIDE > Sketch > Upload
 ```
 
-### Setup Bread Board
+Writing RFID Tag
 
-![rfid_reader](https://user-images.githubusercontent.com/16317266/43329883-9d00e5fe-91fc-11e8-8efe-61dcde600e63.png)
+### Setup Arduino Time Recorder
+Clone
+```
+git clone https://github.com/kiyoto1022/arduino_time_recorder.git
+```
+
+Open Sketch File
+```
+ArduinoIDE > File > Open > arduino_time_recorder\arduino_time_recorder.ino
+```
+
+Writing Arduino Board
+```
+ArduinoIDE > Sketch > Upload
+```
 
 ## Python Setup (2.7)
 
