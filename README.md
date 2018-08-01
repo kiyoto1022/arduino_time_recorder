@@ -1,7 +1,7 @@
 # arduino_time_recorder
 
-Time Recorder with Arduino + RFID
-Take the face of the exit person by the camera when punch out
+Time Recorder with Arduino + RFID<br>
+Take the face of the exit person by the camera when punch out<br>
 Confirm whether you are a principal by machine learning
 
 ## Setup Arduino
